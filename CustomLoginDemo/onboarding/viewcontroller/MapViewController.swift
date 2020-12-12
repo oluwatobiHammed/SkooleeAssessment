@@ -26,8 +26,6 @@ class MapViewController: BaseViewController, CLLocationManagerDelegate, GMSMapVi
     let customMarkerHeight: Int = 70
     
     
-//    let viewController = mainStoryboard.instantiateViewControllerWithIdentifier("tabBarcontroller") as UITabBarController
-//      UIApplication.sharedApplication().keyWindow?.rootViewController = viewController;
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Home"
@@ -100,6 +98,7 @@ class MapViewController: BaseViewController, CLLocationManagerDelegate, GMSMapVi
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
         print("Error while getting location \(error)")
+        AlertView.instance.showAlert(title: "Error while getting location", message:"\(error.localizedDescription)", alertType: .failure)
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
@@ -135,11 +134,6 @@ class MapViewController: BaseViewController, CLLocationManagerDelegate, GMSMapVi
         }
     }
     
-    @objc func restaurantTapped(tag: Int) {
-        let v = DetailsVC()
-        //v.passedData = previewDemoData[tag]
-        self.navigationController?.pushViewController(v, animated: true)
-    }
     
 
     
@@ -180,24 +174,15 @@ class MapViewController: BaseViewController, CLLocationManagerDelegate, GMSMapVi
         return btn
     }()
     
-//    var restaurantPreviewView: RestaurantPreviewView = {
-//        let v=RestaurantPreviewView()
-//        return v
-//    }()
     
     
     @objc func handleSignOut() {
         UserDefaults.standard.setIsLoggedIn(value: false)
-        let loginController = LoginViewController()
         if (self.navigationController?.viewControllers.count == 1) {
-            //navigationController?.pushViewController(LoginViewController(), animated: true)
-            //if let window = self.view.window {
             let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
             let viewController = mainStoryboard.instantiateViewController(withIdentifier: "NavigationController") as! UINavigationController
-                //viewController.viewControllers = [loginController]
                 UIApplication.shared.windows.first?.rootViewController = viewController
                 UIApplication.shared.windows.first?.makeKeyAndVisible()
-               //    }
             
         }
         

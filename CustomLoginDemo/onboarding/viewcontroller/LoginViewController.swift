@@ -80,9 +80,7 @@ class LoginViewController: BaseViewController {
                 case .failure(let error):
                     self.dismissCurrentLoadingModal()
                     self.message = "\(error.localizedDescription)"
-                    let alert = UIAlertController(title: "Login Error", message:"\(error.localizedDescription)", preferredStyle: .alert)
-                    alert.addAction(UIAlertAction(title: "ok", style: .default, handler: nil))
-                    self.present(alert, animated: true, completion: nil)
+                    AlertView.instance.showAlert(title: "Login Error", message:"\(error.localizedDescription)", alertType: .failure)
                 case .none:
                     break
                     

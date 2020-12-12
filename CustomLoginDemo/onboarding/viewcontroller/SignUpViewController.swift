@@ -36,9 +36,7 @@ class SignUpViewController: BaseViewController {
         if let email = request.email, let password = request.password,let confirmPassword = request.passwordConfirmation, let firstName = request.firstName, let lastName = request.lastName, let middleName = request.middleName, let cityId = Int(request.cityId!), let driverType = request.driverType, let phoneNumber = request.phone {
             if (password != confirmPassword) {
                 self.dismissCurrentLoadingModal()
-                let alert = UIAlertController(title: "Login Error", message:"The password confirmation does not match", preferredStyle: .alert)
-                alert.addAction(UIAlertAction(title: "ok", style: .default, handler: nil))
-                self.present(alert, animated: true, completion: nil)
+                AlertView.instance.showAlert(title: "SignUp Error", message:"The password confirmation does not match", alertType: .failure)
             }
             signup(email: email, password: password, passwordConfirmation: confirmPassword, firstName: firstName, lastName: lastName, middleName: middleName, driverType: driverType, cityId: cityId, phoneNumber: phoneNumber) { (res, status) in
                 switch res {
@@ -51,9 +49,7 @@ class SignUpViewController: BaseViewController {
                     }
                 case .failure(let error):
                     self.dismissCurrentLoadingModal()
-                    let alert = UIAlertController(title: "SignUp Error", message:"\(error.localizedDescription)", preferredStyle: .alert)
-                    alert.addAction(UIAlertAction(title: "ok", style: .default, handler: nil))
-                    self.present(alert, animated: true, completion: nil)
+                    AlertView.instance.showAlert(title: "SignUp Error", message:"\(error.localizedDescription)", alertType: .failure)
                    
                 case .none:
                     break
