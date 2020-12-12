@@ -23,12 +23,12 @@
 		31C5BD542583A2E100771038 /* DetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31C5BD532583A2E100771038 /* DetailsVC.swift */; };
 		31C5BD5A2583ADED00771038 /* MainNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31C5BD592583ADED00771038 /* MainNavigationController.swift */; };
 		31C5BD5D2583AE4D00771038 /* UserDefaults+helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31C5BD5C2583AE4D00771038 /* UserDefaults+helpers.swift */; };
+		31C5BD6225849F0300771038 /* SimpleMessageWithHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 31C5BD6125849F0300771038 /* SimpleMessageWithHeader.xib */; };
 		56B2D51462AFE4B0572F1644 /* Pods_CustomLoginDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2FC198F18E7671BECD8869C /* Pods_CustomLoginDemo.framework */; };
 		830C3D8F22E7523E001FA4E7 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 830C3D8E22E7523E001FA4E7 /* Constants.swift */; };
 		830C3D9222E755F6001FA4E7 /* loginbg.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 830C3D9122E755F6001FA4E7 /* loginbg.mp4 */; };
 		8314D43322E644CC001D044A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8314D43222E644CC001D044A /* AppDelegate.swift */; };
 		8314D43522E644CC001D044A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8314D43422E644CC001D044A /* SceneDelegate.swift */; };
-		8314D43722E644CC001D044A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8314D43622E644CC001D044A /* ViewController.swift */; };
 		8314D43A22E644CC001D044A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8314D43822E644CC001D044A /* Main.storyboard */; };
 		8314D43C22E644CD001D044A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8314D43B22E644CD001D044A /* Assets.xcassets */; };
 		8314D43F22E644CD001D044A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8314D43D22E644CD001D044A /* LaunchScreen.storyboard */; };
@@ -226,12 +226,12 @@
 		31C5BD532583A2E100771038 /* DetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsVC.swift; sourceTree = "<group>"; };
 		31C5BD592583ADED00771038 /* MainNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainNavigationController.swift; sourceTree = "<group>"; };
 		31C5BD5C2583AE4D00771038 /* UserDefaults+helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+helpers.swift"; sourceTree = "<group>"; };
+		31C5BD6125849F0300771038 /* SimpleMessageWithHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SimpleMessageWithHeader.xib; sourceTree = "<group>"; };
 		830C3D8E22E7523E001FA4E7 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		830C3D9122E755F6001FA4E7 /* loginbg.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = loginbg.mp4; sourceTree = "<group>"; };
 		8314D42F22E644CC001D044A /* CustomLoginDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CustomLoginDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8314D43222E644CC001D044A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8314D43422E644CC001D044A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		8314D43622E644CC001D044A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		8314D43922E644CC001D044A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8314D43B22E644CD001D044A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8314D43E22E644CD001D044A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -541,7 +541,6 @@
 			children = (
 				CED4FE892473C554006BA130 /* viewmodel */,
 				CED4FE882473C528006BA130 /* viewcontroller */,
-				8314D43622E644CC001D044A /* ViewController.swift */,
 			);
 			path = onboarding;
 			sourceTree = "<group>";
@@ -732,6 +731,7 @@
 		CED4FEBE2473FBA8006BA130 /* component-xib */ = {
 			isa = PBXGroup;
 			children = (
+				31C5BD6125849F0300771038 /* SimpleMessageWithHeader.xib */,
 				CED4FEBF2473FBA8006BA130 /* InteractableCreditCardView.xib */,
 				CED4FEC02473FBA8006BA130 /* CollapsibleFormGroupItem.xib */,
 				CED4FEC12473FBA8006BA130 /* BranchInputGroupSelector.xib */,
@@ -981,6 +981,7 @@
 				CED4FF482473FBA9006BA130 /* MiniCardWithDateAndImageCollectionView.xib in Resources */,
 				CED4FFCA24740603006BA130 /* Montserrat-Italic.ttf in Resources */,
 				CED4FF8E2473FBA9006BA130 /* NumberCounter.xib in Resources */,
+				31C5BD6225849F0300771038 /* SimpleMessageWithHeader.xib in Resources */,
 				CED4FF642473FBA9006BA130 /* TransactionPinSetup.xib in Resources */,
 				CED4FF462473FBA9006BA130 /* AccountExpenseChip.xib in Resources */,
 				CED4FF902473FBA9006BA130 /* BrandSlider.xib in Resources */,
@@ -1162,7 +1163,6 @@
 				31C5BCF22583548A00771038 /* SelectPickerInputGroup.swift in Sources */,
 				CED4FE3E2473AA8D006BA130 /* IconButton.swift in Sources */,
 				31C5BD3D25837D8500771038 /* RadioButtonsInputGroup.swift in Sources */,
-				8314D43722E644CC001D044A /* ViewController.swift in Sources */,
 				CED4FE3D2473AA8D006BA130 /* RadioButtonGroup.swift in Sources */,
 				31C5BD3125837AF900771038 /* Contacts.swift in Sources */,
 				CED4FF9E247405A2006BA130 /* UIToolBarExtension.swift in Sources */,

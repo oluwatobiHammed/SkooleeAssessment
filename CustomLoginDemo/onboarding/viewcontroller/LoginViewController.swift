@@ -7,13 +7,11 @@
 //
 
 import UIKit
-import FirebaseAuth
-import Firebase
 
 class LoginViewController: BaseViewController {
     
-    @IBOutlet weak var formTable: DynamicFormTable?
-    @IBOutlet weak var callToAction: ButtomActionButton?
+    @IBOutlet weak var formTable: DynamicFormTable!
+    @IBOutlet weak var callToAction: ButtomActionButton!
     @IBOutlet weak var signUpbutton: UIButton!
     var formFields: SiginViewModel!
     var dynamicFormViewModel = DynamicFormTableViewModel()
@@ -23,15 +21,19 @@ class LoginViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         //checkifLoogedin()
-        callToAction?.delegate = self
-        self.formTable?.prepareTable()
-        self.formTable?.bindToViewModel(viewModel: dynamicFormViewModel)
+        callToAction.delegate = self
+        self.formTable.prepareTable()
+        self.formTable.bindToViewModel(viewModel: dynamicFormViewModel)
         formFields = SiginViewModel(viewModel: dynamicFormViewModel)
         formFields.kickOff(buttonBar: callToAction)
         setupSignUpButton()
         observeKeyboardNotifications()
         // Do any additional setup after loading the view.
         
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated) // No need for semicolon
     }
     
     fileprivate func observeKeyboardNotifications() {
@@ -96,7 +98,7 @@ class LoginViewController: BaseViewController {
     func setupSignUpButton(){
         let attributedTitleLable = NSMutableAttributedString(string: "Don't have an Account", attributes: [NSAttributedString.Key.foregroundColor : UIColor.black,NSAttributedString.Key.font : UIFont.systemFont(ofSize: 16)])
        let  attributedTitle = NSAttributedString(string: "  Sign Up", attributes: [NSAttributedString.Key.foregroundColor : UIColor.red,NSAttributedString.Key.font : UIFont.systemFont(ofSize: 16)])
-        messageLabel.attributedText = attributedTitleLable
+        messageLabel?.attributedText = attributedTitleLable
         signUpbutton?.setAttributedTitle(attributedTitle, for: .normal)
     }
     

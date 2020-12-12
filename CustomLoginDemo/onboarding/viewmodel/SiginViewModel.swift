@@ -35,7 +35,7 @@ class SiginViewModel: BaseViewModelPopulator {
         row.getInputFieldGroup()?.validEmail = true
       }
     func addPassword() {
-          let row = self.addTextField(fieldName: FIELD_PASSWORD, placeholder: "Signup Password", header: "", required: true)
+          let row = self.addTextField(fieldName: FIELD_PASSWORD, placeholder: "Password", header: "", required: true)
         row.getInputFieldGroup()?.keyboardType = "password"
         row.getInputFieldGroup()?.removeLeftIconSpace = true
         row.getInputFieldGroup()?.passwordVisibility = true

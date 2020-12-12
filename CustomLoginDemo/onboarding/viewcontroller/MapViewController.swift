@@ -26,6 +26,8 @@ class MapViewController: BaseViewController, CLLocationManagerDelegate, GMSMapVi
     let customMarkerHeight: Int = 70
     
     
+//    let viewController = mainStoryboard.instantiateViewControllerWithIdentifier("tabBarcontroller") as UITabBarController
+//      UIApplication.sharedApplication().keyWindow?.rootViewController = viewController;
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Home"
@@ -186,10 +188,21 @@ class MapViewController: BaseViewController, CLLocationManagerDelegate, GMSMapVi
     
     @objc func handleSignOut() {
         UserDefaults.standard.setIsLoggedIn(value: false)
-        
         let loginController = LoginViewController()
+        if (self.navigationController?.viewControllers.count == 1) {
+            //navigationController?.pushViewController(LoginViewController(), animated: true)
+            //if let window = self.view.window {
+            let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+            let viewController = mainStoryboard.instantiateViewController(withIdentifier: "NavigationController") as! UINavigationController
+                viewController.viewControllers = [loginController]
+                UIApplication.shared.windows.first?.rootViewController = viewController
+                UIApplication.shared.windows.first?.makeKeyAndVisible()
+               //    }
+            
+        }
+        
         navigationController?.popToRootViewController(animated: true)
-        //present(loginController, animated: true, completion: nil)
+        
     }
 
 }
