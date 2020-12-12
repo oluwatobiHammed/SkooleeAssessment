@@ -194,7 +194,7 @@ class MapViewController: BaseViewController, CLLocationManagerDelegate, GMSMapVi
             //if let window = self.view.window {
             let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
             let viewController = mainStoryboard.instantiateViewController(withIdentifier: "NavigationController") as! UINavigationController
-                viewController.viewControllers = [loginController]
+                //viewController.viewControllers = [loginController]
                 UIApplication.shared.windows.first?.rootViewController = viewController
                 UIApplication.shared.windows.first?.makeKeyAndVisible()
                //    }
