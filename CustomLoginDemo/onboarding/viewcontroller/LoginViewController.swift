@@ -17,7 +17,7 @@ class LoginViewController: BaseViewController {
     var dynamicFormViewModel = DynamicFormTableViewModel()
     @IBOutlet weak var messageLabel: UILabel!
     var message: String?
-    var statusCode: Int?
+    var statusCodes: Int?
     override func viewDidLoad() {
         super.viewDidLoad()
         //checkifLoogedin()
@@ -67,10 +67,9 @@ class LoginViewController: BaseViewController {
 
     func validateLoginRequest(request: ValidateSignInRequest){
         self.currentLoadingModal = LoadingViewController.showViewController(self, mainTitle: "Validating User", subTitle: "please wait....")
-        if let email = request.email, let password = request.password, let role = request.role {
-            login(email: email, password: password, role: role) { (res, status)  in
+            login(request: request) { [self] (res)  in
                 switch res {
-                case .success(let _):
+                case .success( _):
                     //print(user.token)
                     DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
                         self.dismissCurrentLoadingModal()
@@ -79,18 +78,18 @@ class LoginViewController: BaseViewController {
                     UserDefaults.standard.setIsLoggedIn(value: true)
                 case .failure(let error):
                     self.dismissCurrentLoadingModal()
-                    self.message = "\(error.localizedDescription)"
-                    AlertView.instance.showAlert(title: "Login Error", message:"\(error.localizedDescription)", alertType: .failure)
-                case .none:
-                    break
+                    message = "\(error.localizedDescription)"
                     
+                    AlertView.instance.showAlert(title: "Login Error", message:"\(error.localizedDescription)", alertType: .failure)
+
                 }
 
+            } statusCode: { [self] (Code) in
+                statusCodes = Code
+                
             }
-            
-           
-        }
-       
+        
+      
     }
     
     func setupSignUpButton(){

@@ -76,16 +76,20 @@ func taskForGETRequest<ResponseType: Decodable>(url: URL, responseType: Response
 }
 
 
-func login(email: String, password: String,role: String, completion: @escaping (Result<SignInResponse, Error>?,Int? ) -> Void) {
+
+func login(request: ValidateSignInRequest, completion: @escaping (Result<SignInResponse, Error>) -> Void, statusCode:  @escaping (Int) -> Void? )  {
     guard let url = URL(string: "http://trudev-env.eba-8x69ujbd.us-east-1.elasticbeanstalk.com/api/auth/login") else { return }
-    let body = LoginRequest(email: email, password: password, role: role)
+    guard let role = request.role else {
+        return
+    }
+    let body = LoginRequest(email: request.email!, password: request.password!, role:role )
     taskForPOSTRequest(url:url, responseType: SignInResponse.self, body: body) { response, error, status  in
         if let response = response {
-            completion(.success(response), nil)
+            completion(.success(response))
         } else if let err = error {
-            completion(.failure(err), nil)
+            completion(.failure(err))
         } else if let status = status {
-            completion(nil, status)
+            statusCode(status)
         }
     }
 }

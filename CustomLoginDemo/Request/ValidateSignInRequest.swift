@@ -10,6 +10,7 @@ import Foundation
 import Alamofire
 
 class ValidateSignInRequest:ParameterProvider {
+    public typealias Parameters = [String: Any]
     var baseParameter: Parameters = [:]
     
     
