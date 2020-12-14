@@ -12,6 +12,9 @@
         <array key="Montserrat-ExtraBold.ttf">
             <string>Montserrat-ExtraBold</string>
         </array>
+        <array key="Montserrat-Regular.ttf">
+            <string>Montserrat-Regular</string>
+        </array>
     </customFonts>
     <scenes>
         <!--Login View Controller-->
@@ -22,13 +25,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="aur-N8-pz2" customClass="DynamicFormTable" customModule="CustomLoginDemo" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="165" width="414" height="594"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="aur-N8-pz2" customClass="DynamicFormTable" customModule="CustomLoginDemo" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="165" width="414" height="610"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UXq-Mr-qTs" customClass="ButtomActionButton" customModule="CustomLoginDemo" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="747" width="414" height="80"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <rect key="frame" x="0.0" y="775" width="414" height="80"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="80" id="sUF-xV-jUO"/>
                                 </constraints>
@@ -42,17 +45,18 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T5h-B9-gLY">
-                                <rect key="frame" x="41" y="832" width="225" height="30"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="244" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T5h-B9-gLY">
+                                <rect key="frame" x="0.0" y="855" width="274" height="31"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a7y-hi-E2w">
-                                <rect key="frame" x="274" y="832" width="80" height="30"/>
+                                <rect key="frame" x="274" y="855" width="80" height="31"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="80" id="PyH-rg-AHx"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="80" id="PyH-rg-AHx"/>
                                 </constraints>
+                                <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="15"/>
                                 <state key="normal" title="Button"/>
                                 <connections>
                                     <action selector="signUpPressed:" destination="72s-PG-TW2" eventType="touchUpInside" id="r0d-4D-cPQ"/>
@@ -60,7 +64,7 @@
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="hMw-ND-MlE"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="hMw-ND-MlE" firstAttribute="trailing" secondItem="UXq-Mr-qTs" secondAttribute="trailing" id="7DS-xi-7SL"/>
                             <constraint firstItem="aur-N8-pz2" firstAttribute="top" secondItem="vbh-2a-R8k" secondAttribute="bottom" constant="25" id="7iL-dC-ABA"/>
@@ -68,15 +72,15 @@
                             <constraint firstItem="hMw-ND-MlE" firstAttribute="trailing" secondItem="a7y-hi-E2w" secondAttribute="trailing" constant="60" id="Jrj-sg-ymf"/>
                             <constraint firstItem="UXq-Mr-qTs" firstAttribute="leading" secondItem="hMw-ND-MlE" secondAttribute="leading" id="PI2-Oj-5Bq"/>
                             <constraint firstItem="aur-N8-pz2" firstAttribute="leading" secondItem="hMw-ND-MlE" secondAttribute="leading" id="VEg-CZ-1ny"/>
-                            <constraint firstItem="hMw-ND-MlE" firstAttribute="bottom" secondItem="T5h-B9-gLY" secondAttribute="bottom" id="VtD-0k-PNP"/>
+                            <constraint firstAttribute="bottom" secondItem="T5h-B9-gLY" secondAttribute="bottom" constant="10" id="VtD-0k-PNP"/>
                             <constraint firstItem="hMw-ND-MlE" firstAttribute="trailing" secondItem="vbh-2a-R8k" secondAttribute="trailing" constant="25" id="aei-0z-S9F"/>
-                            <constraint firstItem="T5h-B9-gLY" firstAttribute="top" secondItem="UXq-Mr-qTs" secondAttribute="bottom" constant="5" id="bJn-YZ-SH0"/>
-                            <constraint firstItem="UXq-Mr-qTs" firstAttribute="top" secondItem="aur-N8-pz2" secondAttribute="bottom" constant="-12" id="fET-FP-WWg"/>
-                            <constraint firstItem="T5h-B9-gLY" firstAttribute="leading" secondItem="hMw-ND-MlE" secondAttribute="leading" constant="41" id="hbf-4b-6Rh"/>
-                            <constraint firstItem="a7y-hi-E2w" firstAttribute="leading" secondItem="T5h-B9-gLY" secondAttribute="trailing" constant="8" symbolic="YES" id="hg8-US-Paz"/>
-                            <constraint firstItem="a7y-hi-E2w" firstAttribute="top" secondItem="UXq-Mr-qTs" secondAttribute="bottom" constant="5" id="mbc-fT-ETc"/>
+                            <constraint firstItem="T5h-B9-gLY" firstAttribute="top" secondItem="UXq-Mr-qTs" secondAttribute="bottom" id="bJn-YZ-SH0"/>
+                            <constraint firstItem="UXq-Mr-qTs" firstAttribute="top" secondItem="aur-N8-pz2" secondAttribute="bottom" id="fET-FP-WWg"/>
+                            <constraint firstItem="T5h-B9-gLY" firstAttribute="leading" secondItem="hMw-ND-MlE" secondAttribute="leading" id="hbf-4b-6Rh"/>
+                            <constraint firstItem="a7y-hi-E2w" firstAttribute="leading" secondItem="T5h-B9-gLY" secondAttribute="trailing" id="hg8-US-Paz"/>
+                            <constraint firstItem="a7y-hi-E2w" firstAttribute="top" secondItem="UXq-Mr-qTs" secondAttribute="bottom" id="mbc-fT-ETc"/>
                             <constraint firstItem="vbh-2a-R8k" firstAttribute="leading" secondItem="hMw-ND-MlE" secondAttribute="leading" constant="29" id="v7P-K7-kRx"/>
-                            <constraint firstItem="hMw-ND-MlE" firstAttribute="bottom" secondItem="a7y-hi-E2w" secondAttribute="bottom" id="xxd-nU-Kwt"/>
+                            <constraint firstAttribute="bottom" secondItem="a7y-hi-E2w" secondAttribute="bottom" constant="10" id="xxd-nU-Kwt"/>
                             <constraint firstItem="hMw-ND-MlE" firstAttribute="trailing" secondItem="aur-N8-pz2" secondAttribute="trailing" id="zWP-B8-ayp"/>
                         </constraints>
                     </view>
@@ -106,7 +110,7 @@
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tq2-37-OFQ" customClass="ButtomActionButton" customModule="CustomLoginDemo" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="782" width="414" height="80"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="80" id="Uac-nQ-5cd"/>
                                 </constraints>
@@ -122,7 +126,7 @@
                             </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="iQ3-Nl-HVC"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="idU-15-bpS" firstAttribute="top" secondItem="iQ3-Nl-HVC" secondAttribute="top" constant="35" id="B3O-iu-Lgg"/>
                             <constraint firstItem="Tq2-37-OFQ" firstAttribute="bottom" secondItem="iQ3-Nl-HVC" secondAttribute="bottom" id="BoB-b5-bgS"/>

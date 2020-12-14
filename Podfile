@@ -7,10 +7,6 @@ target 'CustomLoginDemo' do
 
   # Pods for CustomLoginDemo
 
-	pod 'Firebase/Analytics'
-	pod 'Firebase/Auth'	
-	pod 'Firebase/Core'
-	pod 'Firebase/Firestore'
   pod 'RxSwift'                       #,    '~> 4.0'
   pod 'RxCocoa'                       #,    '~> 4.0'
   pod 'DropDown'
